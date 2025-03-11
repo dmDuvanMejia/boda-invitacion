@@ -1,0 +1,9 @@
+<div class="fotos-container">
+    <h2>Nuestras Fotos</h2>
+    <div class="gallery">
+      <div *ngFor="let foto of fotos; let i = index" (click)="abrirLightbox(i)" (keypress)="abrirLightbox(i)">
+        <img [src]="foto.thumb" alt="Foto de boda">
+      </div>
+    </div>
+  </div>
+  
