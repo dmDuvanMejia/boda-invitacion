@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Lightbox } from 'ngx-lightbox';
+import { Lightbox, LightboxModule } from 'ngx-lightbox';
 
 @Component({
   selector: 'app-nuestras-fotos',
+  standalone: true,
   templateUrl: './nuestras-fotos.component.html',
   styleUrls: ['./nuestras-fotos.component.scss'],
-  imports: [CommonModule]
+  imports: [CommonModule, LightboxModule],
+  providers: [Lightbox] // Se agrega el proveedor del servicio
 })
 export class NuestrasFotosComponent {
   fotos = [
-    { src: '../../../../public/fondo.jpg', thumb: 'assets/foto1.jpg' },
-    { src: 'assets/foto2.jpg', thumb: 'assets/foto2.jpg' },
-    { src: 'assets/foto3.jpg', thumb: 'assets/foto3.jpg' }
+    { src: '/fondo.jpg', thumb: '/fondo.jpg' },
+    { src: '/fondo.jpg', thumb: '/fondo.jpg' },
+    { src: '/fondo.jpg', thumb: '/fondo.jpg' },
   ];
 
   constructor(private readonly lightbox: Lightbox) {}
